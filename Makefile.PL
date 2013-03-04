@@ -1,15 +1,18 @@
 use inc::Module::Install;
-#use Module::Install::AuthorTests;
-#use Module::Install::Repository;
+use Module::Install::AuthorTests;
 
 name       'IPC-Lock-WithTTL';
 all_from   'lib/IPC/Lock/WithTTL.pm';
 license    'perl';
-#homepage   'http://fixme/';
-#repository 'http://github.com/hirose31/ipc-lock-withttl';
-# OR auto_set_repository;
+repository 'https://github.com/hirose31/IPC-Lock-WithTTL';
 
-# requires '';
+if ($^O eq 'MSWin32') {
+    print STDERR "OS unsupported: $^O\n";
+    exit;
+}
+
+requires 'Smart::Args';
+requires 'Class::Accessor::Lite';
 
 test_requires 'Test::More' => 0.88;
 
