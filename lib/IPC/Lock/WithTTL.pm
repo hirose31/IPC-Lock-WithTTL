@@ -3,6 +3,8 @@ package IPC::Lock::WithTTL;
 use strict;
 use warnings;
 
+our $VERSION = '0.01';
+
 use Carp;
 use Smart::Args;
 use Class::Accessor::Lite (
