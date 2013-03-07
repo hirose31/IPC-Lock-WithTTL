@@ -4,7 +4,6 @@ use strict;
 use warnings;
 
 use Carp;
-use Log::Minimal;
 use Smart::Args;
 use Class::Accessor::Lite (
     rw => [qw(ttl)],
@@ -52,7 +51,6 @@ sub acquire {
     seek $fh, 0, SEEK_SET;
     my($heartbeat) = <$fh>;
     $heartbeat ||= "0 0";
-    debugf("heartbeat: %s", $heartbeat);
     my($pid, $expiration) = split /\s+/, $heartbeat;
     $pid += 0; $expiration += 0;
 
@@ -76,7 +74,6 @@ sub acquire {
             $new_expiration = $self->update_heartbeat;
 
             if ($self->kill_old_proc && $pid > 0) {
-                debugf("kill %d", $pid);
                 kill 'KILL', $pid;
             }
             $acquired = 1;
@@ -124,7 +121,6 @@ sub update_heartbeat {
     my $fh = $self->_fh;
 
     my $expiration = time() + $self->ttl;
-    debugf("update heartbeat to: %d %d", $pid, $expiration);
 
     seek $fh, 0, SEEK_SET;
     truncate $fh, 0;
