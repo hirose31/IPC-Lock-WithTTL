@@ -137,16 +137,16 @@ __END__
 
 =encoding utf-8
 
-=head1 NAME
-
-IPC::Lock::WithTTL - run only one process up to given timeout
-
 =begin html
 
 <a href="https://travis-ci.org/hirose31/IPC-Lock-WithTTL"><img src="https://travis-ci.org/hirose31/IPC-Lock-WithTTL.png?branch=master" alt="Build Status" /></a>
 <a href="https://coveralls.io/r/hirose31/IPC-Lock-WithTTL?branch=master"><img src="https://coveralls.io/repos/hirose31/IPC-Lock-WithTTL/badge.png?branch=master" alt="Coverage Status" /></a>
 
 =end html
+
+=head1 NAME
+
+IPC::Lock::WithTTL - run only one process up to given timeout
 
 =head1 SYNOPSIS
 
