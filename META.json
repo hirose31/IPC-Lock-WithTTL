@@ -68,7 +68,7 @@
          "web" : "https://github.com/hirose31/IPC-Lock-WithTTL"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_contributors" : [
       "HIROSE Masaaki <hirose31@gmail.com>"
    ]

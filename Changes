@@ -1,5 +1,11 @@
-Revision history for IPC::Lock::WithTTL
+Revision history for IPC-Lock-WithTTL
 
-0.01  2013-03-07
-  * Initial version
+{{$NEXT}}
+    [IMPROVEMENTS]
+        - Use temporary file name in test cases
+          ref: https://rt.cpan.org/Ticket/Display.html?id=119775
 
+0.01     2013-03-07
+    [NEW FEATURES]
+        - Initial version
+ 
