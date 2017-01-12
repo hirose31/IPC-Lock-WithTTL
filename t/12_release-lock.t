@@ -3,10 +3,11 @@ use strict;
 use warnings;
 use Test::More;
 
+use File::Temp;
 use IPC::Lock::WithTTL;
 
 my $myself = $$;
-my $lockfile = '/tmp/12_release-lock';
+my $lockfile = File::Temp::tmpnam();
 
 my $lock = IPC::Lock::WithTTL->new( file => $lockfile, ttl => 3 );
 my($r, $locker);
